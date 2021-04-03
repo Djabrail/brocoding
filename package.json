@@ -1,0 +1,22 @@
+{
+  "name": "brocoding",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.1",
+    "core-js": "^3.9.1",
+    "nuxt": "^2.15.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "dotenv": "^8.2.0",
+    "glob-all": "^3.2.1",
+    "purgecss-webpack-plugin": "^4.0.3"
+  }
+}
