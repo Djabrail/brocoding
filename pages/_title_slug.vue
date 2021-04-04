@@ -2,7 +2,6 @@
   <section>
     <article class="my-8">
       <div class="text-gray-600 font-bold text-sm tracking-wide">
-        <a v-for="(tag, key) in post.tags" :key="key" :href="'/category/'+tag" class="ml-1">{{ tag }}</a>
       </div>
       <h1 class="mt-2 text-3xl font-bold">
         {{ post.title }}
@@ -12,6 +11,8 @@
     </article>
   </section>
 </template>
+
+
 
 <script>
 export default {
