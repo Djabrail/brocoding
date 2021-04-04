@@ -29,13 +29,11 @@ export default {
         headers: { 'Content-Type': 'application/json' }
       })
 
-      console.log(data);
-
       if (!data.entries[0]) {
         return error({ message: '404 Page not found', statusCode: 404 })
       }
 
-      return { post: data.entries[0] }
+      return { post: data }
     }
   }
 }
