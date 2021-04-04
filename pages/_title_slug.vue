@@ -27,7 +27,7 @@ export default {
       headers: { 'Content-Type': 'application/json' }
     })
 
-    return { posts: data.entries[0] }
+    return { post: data.entries[0] }
   }
 }
 
