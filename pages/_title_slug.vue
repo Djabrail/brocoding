@@ -19,7 +19,7 @@ export default {
     if (payload) {
       return { post: payload }
     } else {
-      let { data } = await app.$axios.post('https://cms.brodigital.ru/api/collections/get/posts?id=${params.title_slug}&token=account-20a9d2f75140ba5a0eefec892eef6d',
+      let { data } = await app.$axios.post(`${process.env.POSTS_URL}`,
       JSON.stringify({
           filter: { published: true, title_slug: params.title_slug },
           sort: {_created:-1},
@@ -33,7 +33,7 @@ export default {
         return error({ message: '404 Page not found', statusCode: 404 })
       }
 
-      return { post: data }
+      return { post: data.entries[0] }
     }
   }
 }
