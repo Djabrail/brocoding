@@ -47,7 +47,7 @@ export default {
 
   generate: {
     routes: async () => {
-      let { data } = await axios.post(process.env.POSTS_URL,
+      let { data } = await axios.post('https://cms.brodigital.ru/api/collections/get/posts?token=account-20a9d2f75140ba5a0eefec892eef6d',
       JSON.stringify({
           filter: { published: true },
           sort: {_created:-1},
