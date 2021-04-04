@@ -19,9 +19,9 @@ export default {
     if (payload) {
       return { post: payload }
     } else {
-      let { data } = await app.$axios.post('https://cms.brodigital.ru/api/collections/get/posts?token=account-20a9d2f75140ba5a0eefec892eef6d',
+      let { data } = await app.$axios.post(`https://cms.brodigital.ru/api/collections/get/posts?id=${params.title_slug}&token=account-20a9d2f75140ba5a0eefec892eef6d`,
       JSON.stringify({
-          filter: { published: true, title_slug: params.title_slug },
+          filter: { published: true },
           sort: {_created:-1},
           populate: 1
         }),
