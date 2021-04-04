@@ -1,5 +1,6 @@
 <template>
   <section>
+    <h2>Posts</h2>
     <article class="my-8">
       <div class="text-gray-600 font-bold text-sm tracking-wide">
         <a v-for="(tag, key) in post.tags" :key="key" :href="'/category/'+tag" class="ml-1">{{ tag }}</a>
