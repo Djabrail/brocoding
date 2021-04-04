@@ -16,9 +16,20 @@
 
 <script>
 export default {
-  async asyncData({ $axios, params }) {
-    const { data } = await $axios.get(`https://cms.brodigital.ru/api/collections/get/posts?id=${params.title_slug}&token=account-20a9d2f75140ba5a0eefec892eef6d`);
-    return { post: data.entries[0] }
+  async asyncData ({ app, params }) {
+    const { data } = await app.$axios.post(`https://cms.brodigital.ru/api/collections/get/posts?token=account-20a9d2f75140ba5a0eefec892eef6d`,
+    JSON.stringify({
+        filter: { published: true, title_slug: params.title_slug },
+        sort: {_created:-1},
+        populate: 1
+      }),
+    {
+      headers: { 'Content-Type': 'application/json' }
+    })
+
+    return { posts: data.entries[0] }
   }
 }
+
+
 </script>
